@@ -1,0 +1,8 @@
+/*.content {       //я его перенес в App.css
+    grid-area: c;
+    background-color: cadetblue;
+}*/
+
+ .imgSize img {
+    width: 500px;
+}
