@@ -1,7 +1,7 @@
 
 const News = (props:any) => {
     return (
-        <div>News <div></div> </div>
+        <div>News  </div>
        
         
     )}
