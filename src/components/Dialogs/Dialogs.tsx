@@ -38,18 +38,13 @@ let messagesData =[
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItem}>
-        <DialodItem name={"Dimych"} id={1} />
-        <DialodItem name={"Ivan"} id={2} />
-        
-
-        {/* <div className={s.dialog + " " + s.active}>
-          <NavLink to={"/dialogs/1"}> Dimych </NavLink>
-        </div> */}
+        {/* <DialodItem name={"Dimych"} id={1} />
+        <DialodItem name={"Ivan"} id={2} />      */}
       </div>
       <div className={s.messages}>
-        <Message message={"Hi"} />
+        {/* <Message message={"Hi"} />
         <Message message={"How are you?"} />
-        <Message message={"Yo!"} />
+        <Message message={"Yo!"} /> */}
       </div>
     </div>
   );
