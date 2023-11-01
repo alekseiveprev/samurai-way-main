@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 type DialodItemPropsType = {};
 
-const DialodItem = (props: any) => {
+const DialodItem:React.FC<any> = (props) => {
   let path = "/dialogs/" + props.id;
   return (
     <div className={s.dialog + " " + s.active}>

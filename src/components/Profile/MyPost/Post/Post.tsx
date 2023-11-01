@@ -5,7 +5,7 @@ type PostPropsType ={
     message?: string
     likesCount?: number
 }
-const Post = (props: PostPropsType) => {
+const Post:React.FC<any> = (props) => {
 
 
     return (

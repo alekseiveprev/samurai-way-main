@@ -1,6 +1,6 @@
 import s from "./ProfileInfo.module.css";
 
-const ProfileInfo = (props: any) => {
+const ProfileInfo:React.FC<any> = (props) => {
   return (
     <div>
       <div className={s.imgSize}>

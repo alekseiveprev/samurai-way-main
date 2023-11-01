@@ -3,11 +3,24 @@ import s from "./Dialogs.module.css";
 import DialodItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
+type DialogsArrayPropsType = {
+  id: number
+  name: string
+};
+type MessagesArrayPropsType = {
+  id: number
+  message: string
+};
+type DialogsPropsType = {
+  dialogs:DialogsArrayPropsType[]
+  messages:Array<MessagesArrayPropsType>
+};
 
-type DialogsPropsType = {};
 
-const Dialogs = (props: any) => {
-  let dialogs = [
+
+const Dialogs: React.FC<DialogsPropsType> = (props) => {
+ //1
+  /*  let dialogs = [
     { id: 1, name: "Dimych" },
     { id: 2, name: "Ivan" },
     { id: 3, name: "Alex" },
@@ -21,15 +34,15 @@ const Dialogs = (props: any) => {
     { id: 3, message: "Yo!" },
     { id: 4, message: "Yo-Yo!" },
     { id: 5, message: "Yo-Yo-Yo" },
-  ]
-  let dialogsElements = dialogs.map(d => <DialodItem name={d.name} id={d.id} />)
+  ] */
+  let dialogsElements = props.dialogs.map(d => <DialodItem name={d.name} id={d.id} />)
 
-  let messagesElements = messages.map((m) =>{ return  <Message message={m.message} /> })
+  let messagesElements = props.messages.map((m) => { return <Message message={m.message} /> })
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItem}>
         {dialogsElements}
-       
+
       </div>
       <div className={s.messages}>
         {messagesElements}

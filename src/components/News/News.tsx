@@ -1,5 +1,5 @@
 
-const News = (props:any) => {
+const News:React.FC<any> = (props) => {
     return (
         <div>News  </div>
        
