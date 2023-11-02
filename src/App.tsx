@@ -8,31 +8,9 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Route } from "react-router-dom";
+import state, { RootStateType } from "./redux/state";
 
-function App(props:any) {
-
-  /* let posts = [
-    { id: 1, message: "Hi, how are you?", likesCount: 12 },
-    { id: 2, message: "It's my first post", likesCount: 23 },
-  ]
- */
- /*  let dialogs = [
-    { id: 1, name: "Dimych" },
-    { id: 2, name: "Ivan" },
-    { id: 3, name: "Alex" },
-    { id: 4, name: "Sveta" },
-    { id: 5, name: "Victor" },
-    { id: 6, name: "Jo" },
-  ]
-  let messages = [
-    { id: 1, message: "Hi" },
-    { id: 2, message: "How are you?" },
-    { id: 3, message: "Yo!" },
-    { id: 4, message: "Yo-Yo!" },
-    { id: 5, message: "Yo-Yo-Yo" },
-  ] */
-
-
+function App(props:RootStateType) {
 
 
   return (
@@ -48,8 +26,13 @@ function App(props:any) {
           <Route path={"/settings"} component={Settings} /> */}
           {/*<Dialogs/>*/}
           {/*<Profile/>*/}
-          <Route  path={"/dialogs"} render={()=> <Dialogs dialogs={props.dialogs}  messages={props.messages} />} />
-          <Route path={"/profile"} render={()=> <Profile posts={props.posts}/>} />
+          <Route  path={"/dialogs"} render={()=> <Dialogs state={props.state.dialogsPage} 
+            />} />
+         {/*  <Route  path={"/dialogs"} render={()=> <Dialogs dialogs={state.dialogsPage.dialogs} 
+           messages={state.dialogsPage.messages} />} /> */}
+          <Route path={"/profile"} render={()=> <Profile state={state.profilePage.posts}/>} />
+         {/*  <Route path={"/profile"} render={()=> <Profile posts={state.profilePage.posts}/>} /> */}
+
           <Route path={"/news"} render={()=> <News/>} />
           <Route path={"/music"} render={()=> <Music/>} />
           <Route path={"/settings"} render={()=> <Settings/>} />
