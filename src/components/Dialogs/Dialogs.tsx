@@ -16,9 +16,13 @@ type DialogsPropsType = {
   messages:Array<MessagesArrayPropsType>
 };
 
+type DialogsProps = {
+  state: DialogsPropsType
+}
+// 
 
 
-const Dialogs: React.FC<DialogsPropsType> = (props) => {
+const Dialogs: React.FC<DialogsProps> = (props) => {
  //1
   /*  let dialogs = [
     { id: 1, name: "Dimych" },
@@ -35,9 +39,9 @@ const Dialogs: React.FC<DialogsPropsType> = (props) => {
     { id: 4, message: "Yo-Yo!" },
     { id: 5, message: "Yo-Yo-Yo" },
   ] */
-  let dialogsElements = props.dialogs.map(d => <DialodItem name={d.name} id={d.id} />)
+  let dialogsElements = props.state.dialogs.map(d => <DialodItem name={d.name} id={d.id} />)
 
-  let messagesElements = props.messages.map((m) => { return <Message message={m.message} /> })
+  let messagesElements = props.state.messages.map((m) => { return <Message message={m.message} /> })
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItem}>

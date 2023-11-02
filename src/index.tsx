@@ -28,7 +28,7 @@ let messages = [
 
 
 ReactDOM.render(
-    <App   />,
+    <App state={state}   />,
   document.getElementById('root')
 );
 
