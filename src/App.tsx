@@ -8,16 +8,16 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Route } from "react-router-dom";
-import  { RootStateType } from "./redux/state";
+import { RootStateType } from "./redux/state";
 
 type AppProps = {
   state: RootStateType
 }
 
-function App(props:AppProps) {
+function App(props: AppProps) {
 
-  
-// const {state} = props
+
+  // const {state} = props
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -31,16 +31,16 @@ function App(props:AppProps) {
           <Route path={"/settings"} component={Settings} /> */}
           {/*<Dialogs/>*/}
           {/*<Profile/>*/}
-          <Route  path={"/dialogs"} render={()=> <Dialogs state={props.state.dialogsPage} 
-            />} />
-         {/*  <Route  path={"/dialogs"} render={()=> <Dialogs dialogs={state.dialogsPage.dialogs} 
+          <Route path={"/dialogs"} render={() => <Dialogs state={props.state.dialogsPage}
+          />} />
+          {/*  <Route  path={"/dialogs"} render={()=> <Dialogs dialogs={state.dialogsPage.dialogs} 
            messages={state.dialogsPage.messages} />} /> */}
-          <Route path={"/profile"} render={()=> <Profile state={props.state.profilePage}/>} />
-         {/*  <Route path={"/profile"} render={()=> <Profile posts={state.profilePage.posts}/>} /> */}
+          <Route path={"/profile"} render={() => <Profile state={props.state.profilePage} />} />
+          {/*  <Route path={"/profile"} render={()=> <Profile posts={state.profilePage.posts}/>} /> */}
 
-          <Route path={"/news"} render={()=> <News/>} />
-          <Route path={"/music"} render={()=> <Music/>} />
-          <Route path={"/settings"} render={()=> <Settings/>} />
+          <Route path={"/news"} render={() => <News />} />
+          <Route path={"/music"} render={() => <Music />} />
+          <Route path={"/settings"} render={() => <Settings />} />
         </div>
       </div>
     </BrowserRouter>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import state from "./redux/state";
+import { BrowserRouter } from 'react-router-dom';
 
 /* let posts = [
   { id: 1, message: "Hi, how are you?", likesCount: 12 },
@@ -28,9 +29,21 @@ let messages = [
 
 
 ReactDOM.render(
-    <App state={state}   />,
-  document.getElementById('root')
+
+  <App state={state} />
+
+  , document.getElementById('root')
 );
+
+
+/* // так тоже можно
+ReactDOM.render(
+  <BrowserRouter>
+    <App state={state} />
+  </BrowserRouter>
+  , document.getElementById('root')
+);
+ */
 
 
 
