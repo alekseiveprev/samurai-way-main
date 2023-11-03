@@ -3,11 +3,25 @@ import s from "./Profile.module.css";
 import MyPosts from "./MyPost/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-type ProfilePropsType={
-  
+import App from "./../../App";
+import state from "./../../redux/state";
+import { RootStateType } from "./../../redux/state";
+
+type PostsType = {
+  id: number
+  message: string
+  likesCount: number
 }
 
-const Profile:React.FC<any> = (props) => {
+type ProfilePagesType = {
+  posts: PostsType[]    
+}
+
+type ProfilePropsType={
+  state: ProfilePagesType
+}
+
+const Profile:React.FC<ProfilePropsType> = (props) => {
 //  2
 
   /*  let posts = [
@@ -19,7 +33,9 @@ const Profile:React.FC<any> = (props) => {
   return (
     <div>
       <ProfileInfo />    
-      <MyPosts posts={props.posts} />
+      <MyPosts posts={props.state.posts} />
+      {/* <MyPosts posts={props.posts} /> */}
+
       {/* <MyPosts posts={posts} /> */}
       Main content
     </div>

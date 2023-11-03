@@ -21,8 +21,7 @@ type MessagesType = {
 } */
 
 type ProfilePagesType = {
-    posts: PostsType[]
-    
+    posts: PostsType[]    
 }
 /* type MessagesPagesType = {
     messages: MessagesType[]
