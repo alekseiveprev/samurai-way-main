@@ -1,3 +1,4 @@
+import { stat } from "fs/promises"
 
 type PostsType = {
     id: number
@@ -38,15 +39,12 @@ export type RootStateType = {
     sidebar:Sidebar
 }
 
-
-
 let state:RootStateType = {
     profilePage: {
         posts: [
             { id: 1, message: "Hi, how are you?", likesCount: 12 },
             { id: 2, message: "It's my first post", likesCount: 23 },
-        ],
-       
+        ],       
     },
     dialogsPage: {
         messages: [
@@ -64,42 +62,22 @@ let state:RootStateType = {
             { id: 5, name: "Victor" },
             { id: 6, name: "Jo" },
         ],
-
     },
     sidebar: {}
 }
-
-
-
-
-
-
-/* let state:RootStateType = {
-    profilePage: {
-        posts: [
-            { id: 1, message: "Hi, how are you?", likesCount: 12 },
-            { id: 2, message: "It's my first post", likesCount: 23 },
-        ],
-        dialogs: [
-            { id: 1, name: "Dimych" },
-            { id: 2, name: "Ivan" },
-            { id: 3, name: "Alex" },
-            { id: 4, name: "Sveta" },
-            { id: 5, name: "Victor" },
-            { id: 6, name: "Jo" },
-        ],
-    },
-    messagesPage: {
-        messages: [
-            { id: 1, message: "Hi" },
-            { id: 2, message: "How are you?" },
-            { id: 3, message: "Yo!" },
-            { id: 4, message: "Yo-Yo!" },
-            { id: 5, message: "Yo-Yo-Yo" },
-        ],
-    },
-    sidebar: {}
+/* type AddPostType={
+    (postMessage :string) => void 
+} */
+type PostMessageType={
+   postMessage :string
 }
- */
+export let addPost =(postMessage:string)=>{
+    let newPost = {
+        id: 5, 
+        message: postMessage, 
+        likesCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+}
 
 export default state

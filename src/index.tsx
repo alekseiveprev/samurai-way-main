@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import state from "./redux/state";
 import { BrowserRouter } from 'react-router-dom';
+import {addPost} from "./redux/state";
 
 /* let posts = [
   { id: 1, message: "Hi, how are you?", likesCount: 12 },
@@ -27,10 +28,13 @@ let messages = [
   { id: 5, message: "Yo-Yo-Yo" },
 ] */
 
+//addPost('Samuray')
 
 ReactDOM.render(
 
-  <App state={state} />
+  <App state={state}
+   addPost={addPost}
+   />
 
   , document.getElementById('root')
 );
@@ -44,8 +48,6 @@ ReactDOM.render(
   , document.getElementById('root')
 );
  */
-
-
 
 /* ReactDOM.render(
   <App posts={posts}   dialogs={dialogs}  messages={messages}   />,

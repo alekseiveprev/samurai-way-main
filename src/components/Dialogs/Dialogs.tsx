@@ -61,7 +61,7 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
           <textarea ref={newMessageElement}> </textarea>
         </div>
         <div>
-          <button onClick={addMessage}> Add post</button>
+          <button onClick={addMessage}> Add Message</button>
           <button> Remove</button>
         </div>
       </div>

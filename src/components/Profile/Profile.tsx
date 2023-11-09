@@ -14,28 +14,28 @@ type PostsType = {
 }
 
 type ProfilePagesType = {
-  posts: PostsType[]    
+  posts: PostsType[]
 }
 
-type ProfilePropsType={
+type ProfilePropsType = {
   state: ProfilePagesType
+  addPost: (postMessage: string ) => void
 }
 
-const Profile:React.FC<ProfilePropsType> = (props) => {
-//  2
-
+const Profile: React.FC<ProfilePropsType> = (props) => {
+  //  2
   /*  let posts = [
     { id: 1, message: "Hi, how are you?", likesCount: 12 },
     { id: 2, message: "It's my first post", likesCount: 23 },
   ] */
 
-
   return (
     <div>
-      <ProfileInfo />    
-      <MyPosts posts={props.state.posts} />
+      <ProfileInfo />
+      <MyPosts posts={props.state.posts}
+        addPost={props.addPost}
+      />
       {/* <MyPosts posts={props.posts} /> */}
-
       {/* <MyPosts posts={posts} /> */}
       Main content
     </div>
