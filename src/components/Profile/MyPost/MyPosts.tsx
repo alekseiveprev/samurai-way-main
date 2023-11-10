@@ -51,20 +51,28 @@ const MyPosts: React.FC<PostPropsType> = (props) => {
  /*   let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />) */
   let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />)
 
-  let newPostElement: RefObject<HTMLTextAreaElement> = React.createRef();
+ // let newPostElement: RefObject<HTMLTextAreaElement> = React.createRef();
+  let newPostElement = React.createRef<HTMLTextAreaElement>();
+  let PostMessageRef: RefObject<HTMLTextAreaElement> = React.createRef();
 
   /*  let newPostElement: React.RefObject<HTMLTextAreaElement>
    = React.createRef();  */
 
+ /*  let addPost = () => {
+   // let text= newPostElement.current?.value
+   let text= newPostElement.current? newPostElement.current.value :  '---'
+    props.addPost(text);
+   //alert(newPostElement.current?.value)
+  } */
   let addPost = () => {
-    let text= newPostElement.current?.value
-   // props.addPost(text);
+    if(newPostElement.current){  
+     props.addPost(newPostElement.current.value);    
   }
-
+   }
 
   return (
     <div className={s.postsBlock}>
-      <h3>My posts</h3>
+      <h3>My posts</h3> {/* <h3>props.message </h3> // это из типизации димыча может приг */}
       <div>
         <div>
           <textarea ref={newPostElement}> </textarea>
